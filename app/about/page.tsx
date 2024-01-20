@@ -1,4 +1,4 @@
-import Loader from '@/components/Loader'
+import Loader from '@/components/shared/Loader'
 import { LazyMotion, domAnimation } from 'framer-motion'
 import React, { Suspense } from 'react'
 

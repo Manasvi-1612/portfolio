@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import SideBar from '@/components/SideBar'
+import Header from '@/components/shared/Header'
 import { ThemeContext } from '@/context'
-import Loader from '@/components/Loader'
+import Loader from '@/components/shared/Loader'
 import { Suspense } from 'react'
 
 const poppins = Poppins({
@@ -30,7 +30,7 @@ export default function RootLayout({
           <ThemeContext>
             <div className='flex h-screen justify-between'>
               <main>{children}</main>
-              <SideBar />
+              <Header />
             </div>
           </ThemeContext>
         </Suspense>
