@@ -3,8 +3,6 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/shared/Header'
 import { ThemeContext } from '@/context'
-import Loader from '@/components/shared/Loader'
-import { Suspense } from 'react'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -26,14 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable}`}>
-        <Suspense fallback={<Loader />}>
+        {/* <Suspense fallback={<Loading />}> */}
           <ThemeContext>
             <div className='flex h-screen justify-between'>
               <main>{children}</main>
+              {/* <Suspense fallback={<Loading/>}>{children}</Suspense> */}
               <Header />
             </div>
           </ThemeContext>
-        </Suspense>
+        {/* </Suspense> */}
       </body>
     </html>
   )

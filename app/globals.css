@@ -34,7 +34,7 @@
   } */
 
   .navIcon {
-    @apply bg-secondary-light hover:bg-primary-light dark:bg-secondary-dark hover:dark:bg-primary-dark rounded-full px-3 py-3 transition-all duration-500 hover:text-white;
+    @apply  hover:bg-primary-light  hover:dark:bg-primary-dark rounded-full px-3 py-3 transition-all duration-500 hover:text-white;
   }
 
   .group {
@@ -42,7 +42,7 @@
   }
 
   .addText {
-    @apply inline-block whitespace-nowrap transition-all duration-500 transform text-transparent translate-x-10 pointer-events-none group-hover:-translate-x-0 group-hover:text-white;
+    @apply inline-block whitespace-nowrap transition-all duration-500 transform text-transparent translate-x-10 pointer-events-none group-hover:-translate-x-0 group-hover:text-white ;
   }
 
   .bgBlock {

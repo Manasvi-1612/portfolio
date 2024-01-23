@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { LazyMotion, domAnimation, m, useInView } from 'framer-motion'
 import { Suspense, useEffect, useRef, useState } from 'react'
-import Loader from '@/components/shared/Loader'
 import { animate, exit, initial, transition } from "@/utils/motions";
 import ButtonComponent from '@/components/shared/ButtonComponent'
 import Link from 'next/link'
@@ -38,8 +37,7 @@ export default function Page() {
   const ref = useRef(null);
   const introRef = useRef(null);
   const isInView = useInView(ref, { once: true });
-  // const { scrollToEl } = useScrollTo();
-  // const isTabletUp = useMediaQuery("min-width: 768px");
+
 
   let [count, setCount] = useState(0);
   const text = [
@@ -49,7 +47,6 @@ export default function Page() {
     "develop websites using Next.js"
   ]
 
-  // const onClick = (e) => scrollToEl(e);
 
   useEffect(() => {
     let interval = setInterval(() => {
@@ -85,74 +82,74 @@ export default function Page() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <m.div
-        initial={initial}
-        animate={animate}
-        exit={exit}
-        transition={transition}
-      >
-        <section className='grid grid-cols-1 lg:grid-cols-2 place-items-center' ref={introRef}>
-          <div className="bgBlock hidden lg:flex"></div>
-          <div className="z-10 py-10 pl-10 ">
-            <Image src='/assets/wallpaper.jpg' alt='profile' width={1000} height={1000} className="object-cover w-[250px] h-[250px] rounded-full border-4 border-secondary-dark lg:border-0 lg:w-[75%] lg:h-[600px] lg:rounded-3xl" />
-          </div>
+    <m.div
+      initial={initial}
+      animate={animate}
+      exit={exit}
+      transition={transition}
+    >
+      <section className='grid grid-cols-1 lg:grid-cols-2 place-items-center' ref={introRef}>
+        <div className="bgBlock hidden lg:flex"></div>
+        <div className="z-10 py-10 pl-10 ">
+          <Image src='/assets/wallpaper.jpg' alt='profile' width={1000} height={1000} className="object-cover w-[250px] h-[250px] rounded-full border-4 border-secondary-dark lg:border-0 lg:w-[75%] lg:h-[600px] lg:rounded-3xl" />
+        </div>
 
-          <div className="lg:text-start mx-[10%]">
-            <h1
-              tabIndex={0}
+        <div className="lg:text-start mx-[10%] lg:mx-0">
+          <h1
+            tabIndex={0}
+            ref={ref}
+            className="text-3xl md:text-5xl xl:text-6xl font-bold"
+            style={{
+              transform: isInView ? "none" : "translateX(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            }}
+          >
+            <p>
+              Hi, I&apos;m <mark>Manasvi</mark> a <mark>passionate</mark> software developer.
+            </p>
+          </h1>
+
+          <div className="my-8 relative flex flex-col overflow-hidden">
+            <p
               ref={ref}
-              className="text-3xl md:text-5xl xl:text-6xl font-bold"
+              className="text-[17px] md:text-2xl transform-none opacity-100"
               style={{
                 transform: isInView ? "none" : "translateX(-200px)",
                 opacity: isInView ? 1 : 0,
                 transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
               }}
             >
-              <p>
-                Hi, I&apos;m <mark>Manasvi</mark> a <mark>passionate</mark> software developer.
-              </p>
-            </h1>
-
-            <div className="my-8 relative flex flex-col overflow-hidden">
-              <p
-                ref={ref}
-                className="text-[17px] md:text-2xl transform-none opacity-100"
+              I
+              <span
+                className="absolute flex flex-col transition-all duration-500 ease-in-expo"
                 style={{
-                  transform: isInView ? "none" : "translateX(-200px)",
-                  opacity: isInView ? 1 : 0,
-                  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                  top:
+                    count === 0
+                      ? "0"
+                      : count === 1
+                        ? "-100%"
+                        : count === 2
+                          ? "-200%"
+                          : count === 3
+                            ? "-300%"
+                            : "0",
+                  left: "13px"
                 }}
               >
-                I
-                <span
-                  className="absolute flex flex-col transition-all duration-500 ease-in-expo"
-                  style={{
-                    top:
-                      count === 0
-                        ? "0"
-                        : count === 1
-                          ? "-100%"
-                          : count === 2
-                            ? "-200%"
-                            : count === 3
-                              ? "-300%"
-                              : "0",
-                    left: "13px"
-                  }}
-                >
-                  {text.map((element) => (
-                    <TextElement key={element} element={element} />
-                  ))}
-                </span>
-              </p>
-            </div>
-            <Link href="/about">
-              <ButtonComponent title="More About me" name="Button" />
-            </Link>
+                {text.map((element) => (
+                  <TextElement key={element} element={element} />
+                ))}
+              </span>
+            </p>
           </div>
-        </section>
+          <Link href="/about">
+            <ButtonComponent title="More About me" name="Button" />
+          </Link>
+        </div>
+      </section>
 
-      </m.div>
-    </LazyMotion>
+    </m.div>
+    </LazyMotion >
   )
 }

@@ -1,4 +1,5 @@
 import { sidebarLinks } from '@/constants'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
@@ -38,14 +39,14 @@ const NavItems = () => {
 
                 return (
                     <li key={link.path} className="p-2">
-                        <a href={link.path} className="flex lg:justify-end">
-                            <div className="flex flex-row-reverse lg:flex-row items-center justify-center gap-2 group">
+                        <Link href={link.path} className="flex lg:justify-end">
+                            <div className={`flex flex-row-reverse lg:flex-row items-center justify-center gap-2 group`}>
                                 <span className={`p-medium-16 uppercase lg:addText pl-1`} style={{ direction: "rtl" }}>{link.title}</span>
-                                <div className='lg:navIcon'>
+                                <div className={`${isActive ? 'lg:bg-primary-light lg:dark:bg-primary-dark' : 'lg:bg-secondary-light lg:dark:bg-secondary-dark'} lg:navIcon`}>
                                     {link.icon}
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </li>
                 )
             })}

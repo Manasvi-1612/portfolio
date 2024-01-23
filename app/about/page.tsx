@@ -1,15 +1,21 @@
-import Loader from '@/components/shared/Loader'
-import { LazyMotion, domAnimation } from 'framer-motion'
-import React, { Suspense } from 'react'
+"use client"
+
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+import Loader from '@/components/shared/Loader';
+
+const loadingFallback = {};
+
+const About = dynamic(
+    () => import('@/components/shared/About'),
+    { loading: () => <Loader />, ssr: false }
+)
+
 
 const page = () => {
     return (
         <>
-            <Suspense fallback={<Loader />}>
-                <section>
-                    About
-                </section>
-            </Suspense>
+            <About />
         </>
     )
 }
