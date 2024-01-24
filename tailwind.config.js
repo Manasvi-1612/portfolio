@@ -28,9 +28,12 @@ module.exports = {
           light: "#72b626"
         },
         secondary: {
-          dark: "#2b2a2a",
-          light: " #DDDDDD"
+          dark: "#ffffff12",
+          light: " #1e253012"
         },
+        title: {
+          light: "#666"
+        }
       },
       keyframes: {
         "accordion-down": {

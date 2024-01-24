@@ -27,8 +27,7 @@ export default function RootLayout({
         {/* <Suspense fallback={<Loading />}> */}
           <ThemeContext>
             <div className='flex h-screen justify-between'>
-              <main>{children}</main>
-              {/* <Suspense fallback={<Loading/>}>{children}</Suspense> */}
+              <main className="w-full">{children}</main>
               <Header />
             </div>
           </ThemeContext>
