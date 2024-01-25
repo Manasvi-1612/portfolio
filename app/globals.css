@@ -49,6 +49,10 @@
     @apply fixed h-[200%] w-full bg-primary-light dark:bg-primary-dark -rotate-12 -left-[83%] -top-2/4
   }
 
+  .prime-title {
+    @apply h1-bold text-secondary-light dark:text-secondary-dark absolute right-0 left-0 top-1/2 -translate-y-1/2
+  }
+
   mark {
     @apply bg-transparent text-primary-light dark:text-primary-dark;
   }
@@ -59,7 +63,7 @@
 
 
   .h1-bold {
-    @apply font-extrabold text-[60px] leading-[48px] lg:text-[80px] lg:leading-[60px] xl:text-[110px] xl:leading-[74px];
+    @apply font-extrabold text-[60px] leading-[48px] lg:text-[80px] lg:leading-[60px] xl:text-[110px] xl:leading-[74px] tracking-[10px];
   }
 
   /* 40 */

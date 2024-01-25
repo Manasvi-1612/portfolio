@@ -1,8 +1,9 @@
 "use client"
 
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
 import Loader from '@/components/shared/Loader';
+import { initial, transition, animate, exit } from '@/utils/motions';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 
 const loadingFallback = {};
 
@@ -14,9 +15,16 @@ const About = dynamic(
 
 const page = () => {
     return (
-        <>
-            <About />
-        </>
+        <LazyMotion features={domAnimation} >
+            <m.div
+                initial={initial}
+                animate={animate}
+                exit={exit}
+                transition={transition}
+            >
+                <About />
+            </m.div>
+        </LazyMotion>
     )
 }
 
