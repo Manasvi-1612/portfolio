@@ -24,13 +24,13 @@ const ButtonComponent = ({ title, name }: { title: string, name: string }) => {
 
   return (
     <>
-      <Button className="btn gap-3 rounded-full py-7 relative decoration-transparent" variant={'link'} ref={ref}>
+      <Button className="btn gap-3 rounded-full py-7 relative decoration-transparent text-title-light dark:text-white" variant={'link'} ref={ref}>
         <p className="p-bold-16 uppercase z-10 px-4" style={{
           transform: isInView ? "none" : "translateX(-200px)",
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}>{title}</p>
-        <div className="rounded-full bg-primary-light dark:bg-primary-dark p-[18px] z-10 -mr-4">
+        <div className="rounded-full bg-primary-light dark:bg-primary-dark p-[18px] z-10 -mr-[16.5px]">
           {icon.filter((item) => item.name === name)[0].icon}
         </div>
       </Button>

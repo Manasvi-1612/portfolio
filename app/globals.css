@@ -42,7 +42,7 @@
   }
 
   .addText {
-    @apply inline-block whitespace-nowrap transition-all duration-500 transform text-transparent translate-x-10 pointer-events-none group-hover:-translate-x-0 group-hover:text-white;
+    @apply inline-block whitespace-nowrap transition-all duration-500 transform opacity-0 text-white translate-x-10 pointer-events-none group-hover:-translate-x-0 group-hover:opacity-100;
   }
 
   .bgBlock {
@@ -168,6 +168,15 @@
     @apply text-[12px] font-medium leading-[20px];
   }
 
+
+  .hide-scroll-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
 }
 

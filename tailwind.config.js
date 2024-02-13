@@ -29,7 +29,7 @@ module.exports = {
         },
         secondary: {
           dark: "#ffffff12",
-          light: " #1e253012"
+          light: "#1e253012"
         },
         title: {
           light: "#666"
