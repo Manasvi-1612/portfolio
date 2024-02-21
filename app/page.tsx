@@ -60,26 +60,6 @@ export default function Page() {
     return () => clearInterval(interval);
   }, [count]);
 
-
-
-  const stylDiv = {
-    position: 'relative',
-    backgroundImage: 'url(/assets/wallpaper.jpg)',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'top',
-    width: "30%",
-    height: '85%',
-    // zIndex: '111',
-    borderRadius: '30px',
-    left: '40px',
-    top: '40px',
-    boxShadow: '0 0 7px rgba(0,0,0,.9)',
-    WebkitFilter: 'blur(0.5px) contrast(1.15)',
-    filter: 'blur(0.5px) contrast(1.15)',
-
-  }
-
   return (
     <LazyMotion features={domAnimation}>
     <m.div

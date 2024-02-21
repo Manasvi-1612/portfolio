@@ -25,12 +25,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable}`}>
         {/* <Suspense fallback={<Loading />}> */}
-          <ThemeContext>
-            <div className='flex h-screen justify-between'>
-              <main className="w-full">{children}</main>
-              <Header />
-            </div>
-          </ThemeContext>
+        <ThemeContext>
+          <div className='flex h-screen justify-between'>
+            <main className="w-full">{children}</main>
+            <Header />
+          </div>
+        </ThemeContext>
         {/* </Suspense> */}
       </body>
     </html>

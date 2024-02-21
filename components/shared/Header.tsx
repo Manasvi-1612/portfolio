@@ -14,16 +14,17 @@ const Header = () => {
 
     return (
 
-        <header className="lg:flex lg:flex-col lg:justify-around w-40">
-            <div className="flex items-center justify-center gap-4 lg:justify-end lg:pr-9 pt-10">
-                <ThemeSwitcher />
-                <MobileNav />
-            </div>
+        <header className="w-40">
+            <nav className="lg:flex lg:flex-col gap-28 fixed">
+                <div className="flex items-center justify-center gap-4 lg:justify-end lg:pr-9 pt-10">
+                    <ThemeSwitcher />
+                    <MobileNav />
+                </div>
 
-            <div className='hidden lg:flex'>
-                <NavItems />
-            </div>
-
+                <div className='hidden lg:flex'>
+                    <NavItems />
+                </div>
+            </nav>
         </header>
     )
 }

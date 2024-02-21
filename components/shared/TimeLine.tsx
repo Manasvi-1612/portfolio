@@ -20,7 +20,7 @@ export function TimeLine() {
         <LazyMotion features={domAnimation}>
             <ul
                 ref={carouselRef}
-                className="flex flex-row gap-4 lg:grid lg:grid-cols-2  overflow-x-auto snap-x cursor-pointer hide-scroll-bar text-title-light dark:text-white"
+                className="flex flex-row gap-5 lg:grid lg:grid-cols-2 overflow-x-auto snap-x cursor-pointer hide-scroll-bar text-title-light dark:text-white"
             >
                 <>
                     {TimeLineData.map((item, index) => {

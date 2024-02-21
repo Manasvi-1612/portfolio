@@ -4,6 +4,11 @@ import PrimeTitle from './PrimeTitle';
 import { TimeLine } from './TimeLine';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Separator } from '../ui/separator';
+
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import Technologies from './Technologies';
 
 const About = () => {
 
@@ -11,12 +16,12 @@ const About = () => {
     const isInView = useInView(ref, { once: true });
 
     return (
-        <>
-            <section className='flex items-center justify-center'>
+        <section className='ml-[10%] text-title-light dark:text-white'>
+            <section className='flex items-center justify-center '>
                 <PrimeTitle title="Resume" subtitle="About" span="me" />
             </section>
-            <section className='grid grid-cols-1  lg:place-items-center lg:grid-cols-2 my-10 ml-[20%] lg:ml-[3%]'>
-                <div className='text-title-light dark:text-white'
+            <section className='grid grid-cols-1  lg:place-items-center lg:grid-cols-2 my-12 ml-[10%] lg:ml-0'>
+                <div className=''
                     ref={ref}
                     style={{
                         transform: isInView ? "none" : "translateX(-200px)",
@@ -25,7 +30,7 @@ const About = () => {
                     }}
                 >
                     <h1 className="uppercase h5-bold py-5">Personal Info</h1>
-                    <div className='grid grid-cols-2 gap-2 pb-10'>
+                    <div className='grid grid-cols-2 gap-5 pb-10'>
                         <div>First Name: <span className='p-medium-16'>Manasvi</span></div>
                         <div>Last Name: <span className='p-medium-16'>Joshi</span></div>
                         <div>Address: <span className='p-medium-16'>Jaipur, Rajasthan</span></div>
@@ -43,7 +48,18 @@ const About = () => {
                     <TimeLine />
                 </div>
             </section>
-        </>
+            <Separator className="ml-[32%] w-1/3 dark:bg-secondary-dark" />
+
+            {/* <section className="text-center text-title-light dark:text-white my-12">
+                <h1 className="uppercase h5-bold py-5">My Skills</h1>
+                <div className='grid grid-cols-2 gap-5 pb-10'>
+                    <CircularProgressbar value={40} text={`${40}%`} />;
+                </div>
+            </section> */}
+
+            <Technologies />
+
+        </section>
     )
 }
 

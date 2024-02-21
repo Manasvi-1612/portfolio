@@ -27,7 +27,7 @@ export function ThemeSwitcher() {
                 exit={exit}
                 transition={transition}
             >
-                {currentTheme === "dark" ? <BsSun size={22} /> : <BsMoon color="#525252" size={22} />}
+                {currentTheme === "dark" ? <BsSun size={21} /> : <BsMoon color="#525252" size={20} />}
             </m.div>
         </LazyMotion>
     );
