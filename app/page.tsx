@@ -70,8 +70,8 @@ export default function Page() {
     >
       <section className='grid grid-cols-1 lg:grid-cols-2 place-items-center text-title-light dark:text-white' ref={introRef}>
         <div className="bgBlock hidden lg:flex"></div>
-        <div className="z-10 py-10 pl-10 ">
-          <Image src='/assets/wallpaper.jpg' alt='profile' width={1000} height={1000} className="object-cover w-[250px] h-[250px] rounded-full border-4 border-secondary-dark lg:border-0 lg:w-[75%] lg:h-[600px] lg:rounded-3xl" />
+        <div className="z-10 py-10 lg:pl-10 ">
+          <Image src='/assets/wallpaper.jpg' alt='profile' width={1000} height={1000} className="object-cover w-[250px] h-[250px] rounded-full border-4 dark:border-secondary-dark border-secondary-light lg:border-0 lg:w-[75%] lg:h-[600px] lg:rounded-3xl" />
         </div>
 
         <div className="lg:text-start mx-[10%] lg:mx-0">

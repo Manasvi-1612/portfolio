@@ -16,12 +16,12 @@ const About = () => {
     const isInView = useInView(ref, { once: true });
 
     return (
-        <section className='ml-[10%] text-title-light dark:text-white'>
-            <section className='flex items-center justify-center '>
-                <PrimeTitle title="Resume" subtitle="About" span="me" />
+        <section className=' text-title-light dark:text-white'>
+            <section className='flex items-center justify-center pt-10'>
+                <PrimeTitle title="Resume" subtitle="About" span="me"/>
             </section>
             <section className='grid grid-cols-1  lg:place-items-center lg:grid-cols-2 my-12 ml-[10%] lg:ml-0'>
-                <div className=''
+                <div className='lg:ml-[5%]'
                     ref={ref}
                     style={{
                         transform: isInView ? "none" : "translateX(-200px)",
