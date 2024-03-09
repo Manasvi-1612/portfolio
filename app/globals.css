@@ -151,6 +151,10 @@
     @apply text-[16px] font-normal leading-[24px];
   }
 
+  .p-semibold-16 {
+    @apply text-[16px] font-semibold leading-[24px];
+  }
+
   /* 14 */
   .p-semibold-14 {
     @apply text-[14px] font-semibold leading-[20px];
@@ -164,12 +168,17 @@
     @apply text-[14px] font-normal leading-[20px];
   }
 
+  .p-semibold-13 {
+    @apply text-[13px] font-semibold leading-[20px];
+  }
+
+
   /* 12 */
   .p-medium-12 {
     @apply text-[12px] font-medium leading-[20px];
   }
 
-
+  
   .hide-scroll-bar::-webkit-scrollbar {
     display: none;
   }

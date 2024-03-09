@@ -23,12 +23,6 @@ export const sidebarLinks = [
         isHovered: false
     },
     {
-        title: 'Experience',
-        path: '/experience',
-        icon: <FaPencilAlt size={24} />,
-        isHovered: false
-    },
-    {
         title: 'Contact',
         path: '/contact',
         icon: <FaEnvelope size={24} />,
@@ -94,7 +88,7 @@ export const technologies = [
 
     },
     {
-        title:"Bootstrap",
+        title: "Bootstrap",
         icon: <SiBootstrap size={60} />
     },
     {
@@ -102,8 +96,48 @@ export const technologies = [
         icon: <SiGithub size={60} />
     },
     {
-        title:"Docker",
+        title: "Docker",
         icon: <SiDocker size={60} />
     }
 
+]
+
+export const experience = [
+    {
+        title: 'Full Stack Intern -',
+        company: 'Scarpbag pvt. ltd.',
+        description: "Spearheaded the development of the company's website using React js, ensuring high performance and user-friendly interfaces.",
+        date: '09/2023 - 12/2023'
+    },
+    {
+        title: 'React Developer -',
+        company: 'Netparam Technologies Pvt. ltd.',
+        description: "Developed and maintained the company's website, ensuring seamless user experiences and responsiveness across various devices.",
+        date: '07/2023 - 09/2023'
+    },
+    {
+        title: 'Machine Learning Traniee -',
+        company: 'Celebal Technologies',
+        description: 'Completed a comprehensive training program focused on machine learning fundamentals and Python programming language',
+        date: '2022'
+    },
+]
+
+
+export const education = [
+    {
+        title: 'Bachelor of Technology',
+        description: "Poornima College Of Engineering, Jaipur",
+        date: '2021 - Present'
+    },
+    {
+        title: 'High School',
+        description: "Emmanuel Mission School, Pali, Rajasthan",
+        date: '2020 - 2021'
+    },
+    {
+        title: 'Secondary School',
+        description: "Emmanuel Mission School, Pali, Rajasthan",
+        date: '2019 - 2020'
+    },
 ]
