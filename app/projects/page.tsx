@@ -1,7 +1,7 @@
 "use client"
 
 export default function Page({ children }: {
-  children: JSX.Element | JSX.Element[];
+  children: any
 }) {
   return <div className="container-md">{children}</div>;
 }
