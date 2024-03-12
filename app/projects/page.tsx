@@ -1,7 +1,5 @@
 "use client"
 
-export default function Page({ children }: {
-  children: any
-}) {
-  return <div className="container-md">{children}</div>;
+export default function Page() {
+  return <div className="container-md"></div>;
 }
