@@ -1,6 +1,4 @@
-export const metadata = {
-  title: `Projects`
-};
+"use client"
 
 export default function Page({ children }: {
   children: React.ReactNode
