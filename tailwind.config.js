@@ -44,10 +44,22 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "preloader-slide": {
+          from: { transform: 'scaleY(0)' },
+          to: { transform: 'scaleY(1)' }
+        },
+        "loader-running": {
+          "0%": { transform: "scaleX(0)", transformOrigin: "left" },
+          "49%": { transform: "scaleX(1)", transformOrigin: "left" },
+          "50%": { transform: "scaleX(1)", transformOrigin: "right" },
+          "100%": { transform: "scaleX(0)", transformOrigin: "right" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "preloader-slide": "preloader-slide 0.5s ease-in-out 0s 1 normal both",
+        "loader-running": "loader-running 3s ease-in-out 1s infinite normal both"
       },
     },
   },

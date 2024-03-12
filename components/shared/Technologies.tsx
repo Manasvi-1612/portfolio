@@ -5,7 +5,7 @@ import { SiNextdotjs } from "react-icons/si";
 const Technologies = () => {
     return (
         <section className="py-14">
-            <div className="container">
+            <div className="">
                 <div className="text-center py-5">
                     <h1 className="uppercase p-bold-24 md:h5-bold">My Skills</h1>
                     <p className="p-medium-20 py-5">I work with the following technologies and tools:</p>

@@ -63,6 +63,28 @@
   }
 
 
+  .section {
+    @apply py-12 md:py-16;
+  }
+
+  .container-md {
+    @apply max-w-7xl mx-auto px-3;
+  }
+
+
+  .icon-link-btn {
+    @apply flex items-center justify-center gap-2.5 px-2 p-1 rounded transition-colors hover:bg-secondary-light dark:hover:bg-secondary-dark;
+  }
+
+  .icon-link-btn--outline {
+    @apply border border-secondary-light dark:border-secondary-dark;
+  }
+
+  .icon-link-btn--active {
+    @apply bg-secondary-light dark:bg-secondary-dark;
+  }
+
+
   .h1-bold {
     @apply font-extrabold text-[60px] leading-[48px] lg:text-[80px] lg:leading-[60px] xl:text-[110px] xl:leading-[74px] tracking-[10px];
   }
@@ -178,7 +200,7 @@
     @apply text-[12px] font-medium leading-[20px];
   }
 
-  
+
   .hide-scroll-bar::-webkit-scrollbar {
     display: none;
   }
@@ -188,73 +210,20 @@
     scrollbar-width: none;
   }
 
-}
-
-
-.preloader {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #111;
-  transform-origin: bottom;
-  z-index: 111111
-}
-
-.preloader .black_wall {
-  height: 100%;
-  background-color: #222;
-  transform-origin: top;
-  animation: preloader_slide 0.5s ease-in-out 0s 1 normal both
-}
-
-.preloader .loader {
-  width: 100%;
-  height: 3px;
-  position: absolute;
-  border-radius: 2px;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  background-color: #FFC41F;
-  transform-origin: left;
-  animation: loader_running 3s ease-in-out 1s infinite normal both
-}
-
-.preloader.off {
-  animation: preloader_slide 0.5s ease-in-out 0s 1 reverse both
-}
-
-@keyframes loader_running {
-  0% {
-    transform: scaleX(0);
-    transform-origin: left
+  .preloader {
+    @apply fixed top-0 right-0 bottom-0 left-0 bg-custom-light dark:bg-custom-dark origin-bottom z-50;
   }
 
-  49% {
-    transform: scaleX(1);
-    transform-origin: left
+  .black_wall {
+    @apply h-[100%] bg-secondary-light dark:bg-secondary-dark origin-top animate-[preloader-slide_0.5s_ease-in-out_0s_1_normal_both];
   }
 
-  50% {
-    transform: scaleX(1);
-    transform-origin: right
+  .loader {
+    @apply w-full h-[3px] absolute rounded-[2px] top-0 right-0 left-0 m-auto bg-primary-light dark:bg-primary-dark origin-left animate-[loader-running_3s_ease-in-out_1s_infinite_normal_both];
   }
 
-  100% {
-    transform-origin: right;
-    transform: scaleX(0)
-  }
-}
-
-@keyframes preloader_slide {
-  from {
-    transform: scaleY(0)
+  .preloader.off {
+    @apply animate-[preloader-slide0.5s_ease-in-out_0s_1_reverse_both];
   }
 
-  to {
-    transform: scaleY(1)
-  }
 }
