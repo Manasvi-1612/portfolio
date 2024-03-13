@@ -12,7 +12,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 export default function ProjectItem({ project, index }: { project: any; index: number }) {
     const { description, images, liveUrl, repoUrl, tag, title } = project;
-    
+
     const cardRef = useRef(null);
     const isInView = useInView(cardRef, { once: true });
 
@@ -37,16 +37,14 @@ export default function ProjectItem({ project, index }: { project: any; index: n
         >
             <section>
                 <div className="w-full h-full">
-                    <Suspense fallback={<Loader />}>
-                        <ImageGallery
-                            items={galleryImages}
-                            showPlayButton={false}
-                            showThumbnails={false}
-                            showIndex
-                            lazyLoad
-                            additionalClass="gallery-item"
-                        />
-                    </Suspense>
+                    <ImageGallery
+                        items={galleryImages}
+                        showPlayButton={false}
+                        showThumbnails={false}
+                        showIndex
+                        lazyLoad
+                        additionalClass="gallery-item"
+                    />
                 </div>
             </section>
 
