@@ -18,10 +18,10 @@ export default function ProjectItem({ project, index }: { project: any; index: n
 
     const galleryImages = images.map((img: string) => ({
         original: img,
-        // loading: "lazy"
+        loading: "lazy"
     }));
 
-
+    console.log(galleryImages);
 
     return (
         <section
