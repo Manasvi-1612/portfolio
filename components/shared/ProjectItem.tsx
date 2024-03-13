@@ -33,7 +33,7 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                 transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${index === 0 ? 0 : 25 * index}ms`
             }}
         >
-            <figure>
+            {/* <section>
                 <div className="w-full h-full">
                     <Suspense fallback={<Loader />}>
                         <ImageGallery
@@ -46,7 +46,7 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                         />
                     </Suspense>
                 </div>
-            </figure>
+            </section> */}
 
             <div className="flex-[2] px-5 py-6 text-center flex flex-col gap-10">
                 <header className="flex-1 flex items-center justify-start flex-col gap-3">

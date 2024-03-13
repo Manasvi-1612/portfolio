@@ -6,6 +6,7 @@ import useSWR from "swr"
 import { Projects } from "./components/Projects"
 import { useState } from "react"
 import { ErrorBoundary } from "react-error-boundary";
+import Error from "../error"
 
 const url = `${process.env.SANITY_ALL_PROJECTS_URL}`
 
@@ -33,7 +34,7 @@ export default function Page() {
                 {results === undefined ? (
                     <div>Loading....</div>
                 ) : (
-                    results.length > 0 ? (<Projects projects={results} />) : (<div>No project found</div>)
+                    results.length > 0 ? (<ErrorBoundary fallback={<Error />}><Projects projects={results} /></ErrorBoundary>) : (<div>No project found</div>)
                 )}
             </section>
         </div>
