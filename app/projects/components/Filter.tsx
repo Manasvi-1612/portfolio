@@ -6,7 +6,7 @@ import { FilterButton } from './FilterButton';
 import { TbBrandJavascript, TbBrandNextjs } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 
-const Filter = ({ onClick = (f?: string) => f }) => {
+const Filter = ({ onClick }: { onClick: Function }) => {
 
     const animRef = useRef(null);
     const isInView = useInView(animRef, { once: true });
@@ -32,7 +32,7 @@ const Filter = ({ onClick = (f?: string) => f }) => {
                 </h3>
                 <div className="flex items-center gap-4">
                     <FilterButton
-                        onClick={() => handleFilterClick(undefined)}
+                        onClick={() => handleFilterClick()}
                         label="All"
                         active={activeFilter === undefined}
                     >

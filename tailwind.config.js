@@ -33,7 +33,10 @@ module.exports = {
         },
         title: {
           light: "#666"
-        }
+        },
+        badge: {
+					dark: "rgba(226, 232, 240, 0.16)",
+				}
       },
       keyframes: {
         "accordion-down": {

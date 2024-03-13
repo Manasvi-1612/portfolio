@@ -14,15 +14,15 @@ export default function ProjectItem({ project, index }: { project: any; index: n
     const cardRef = useRef(null);
     const isInView = useInView(cardRef, { once: true });
 
-    // const galleryImages = images?.map((img: string) => ({
-    //     original: img,
-    //     loading: "lazy"
-    // }));
+    const galleryImages = images?.map((img: string) => ({
+        original: img,
+        loading: "lazy"
+    }));
 
     return (
         <article
             ref={cardRef}
-            className="flex flex-col rounded-lg bg-card-light dark:bg-card-dark"
+            className="flex flex-col rounded-lg bg-secondary-light dark:bg-secondary-dark"
             style={{
                 transform: isInView
                     ? "none"
@@ -31,20 +31,20 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                 transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${index === 0 ? 0 : 25 * index}ms`
             }}
         >
-            {/* <figure>
-                <div className="aspect-[12/9.2] w-full h-full">
+            <figure>
+                <div className="w-full h-full">
                     <Suspense fallback={<Loader />}>
                         <ImageGallery
                             items={galleryImages}
                             showPlayButton={false}
                             showThumbnails={false}
                             showIndex
-                            // lazyload
+                            lazyLoad
                             additionalClass="gallery-item"
                         />
                     </Suspense>
                 </div>
-            </figure> */}
+            </figure>
 
             <div className="flex-[2] px-5 py-6 text-center flex flex-col gap-10">
                 <header className="flex-1 flex items-center justify-start flex-col gap-3">
@@ -58,11 +58,11 @@ export default function ProjectItem({ project, index }: { project: any; index: n
 
                 <footer className="flex flex-col gap-10">
                     {!!tag.length && (
-                        <div className="flex-center flex-wrap gap-3">
+                        <div className="flex items-center justify-center flex-wrap gap-3">
                             {tag.map((t: string) => (
                                 <span
                                     key={t}
-                                    className="px-2 text-sm leading-normal rounded bg-badge-light/50 dark:bg-badge-dark"
+                                    className="px-2 text-sm leading-normal rounded bg-secondary-light dark:bg-badge-dark"
                                 >
                                     {t}
                                 </span>
@@ -70,7 +70,7 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                         </div>
                     )}
 
-                    <div className="flex-center gap-10">
+                    <div className="flex items-center justify-center gap-10">
                         {repoUrl && (
                             <Link
                                 href={repoUrl}
