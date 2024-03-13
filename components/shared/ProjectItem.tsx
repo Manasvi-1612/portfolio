@@ -22,7 +22,7 @@ export default function ProjectItem({ project, index }: { project: any; index: n
     }));
 
     return (
-        <article
+        <section
             ref={cardRef}
             className="flex flex-col rounded-lg bg-secondary-light dark:bg-secondary-dark"
             style={{
@@ -98,6 +98,6 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                     </div>
                 </footer>
             </div>
-        </article>
+        </section>
     );
 }

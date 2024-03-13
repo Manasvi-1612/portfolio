@@ -5,6 +5,7 @@ import Filter from "./components/Filter"
 import useSWR from "swr"
 import { Projects } from "./components/Projects"
 import { useState } from "react"
+import { ErrorBoundary } from "react-error-boundary";
 
 const url = `${process.env.SANITY_ALL_PROJECTS_URL}`
 
@@ -20,7 +21,7 @@ export default function Page() {
 
     const { data, error } = useSWR(fetchUrl, fetcher)
 
-    const results: any[] = data?.result
+    const results = data?.result
 
     const onClick = (catName: string) => setCategory(catName);
 
@@ -32,7 +33,7 @@ export default function Page() {
                 {results === undefined ? (
                     <div>Loading....</div>
                 ) : (
-                    results.length > 0 ? <Projects projects={results} /> : (<div>No project found</div>)
+                    results.length > 0 ? (<Projects projects={results} />) : (<div>No project found</div>)
                 )}
             </section>
         </div>
