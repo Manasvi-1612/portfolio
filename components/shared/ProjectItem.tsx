@@ -12,14 +12,17 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 export default function ProjectItem({ project, index }: { project: any; index: number }) {
     const { description, images, liveUrl, repoUrl, tag, title } = project;
-
+    
     const cardRef = useRef(null);
     const isInView = useInView(cardRef, { once: true });
 
-    const galleryImages = images?.map((img: string) => ({
+    const galleryImages = images.map((img: string) => ({
         original: img,
         loading: "lazy"
     }));
+
+    console.log(galleryImages)
+
 
     return (
         <section
@@ -33,7 +36,7 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                 transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${index === 0 ? 0 : 25 * index}ms`
             }}
         >
-            {/* <section>
+            <section>
                 <div className="w-full h-full">
                     <Suspense fallback={<Loader />}>
                         <ImageGallery
@@ -46,7 +49,7 @@ export default function ProjectItem({ project, index }: { project: any; index: n
                         />
                     </Suspense>
                 </div>
-            </section> */}
+            </section>
 
             <div className="flex-[2] px-5 py-6 text-center flex flex-col gap-10">
                 <header className="flex-1 flex items-center justify-start flex-col gap-3">
