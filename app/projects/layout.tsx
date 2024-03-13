@@ -29,7 +29,11 @@ export default function Page() {
             <section className="section">
                 <Filter onClick={onClick} />
 
-                {results.length > 0 ? <Projects projects={results} /> : (<div>No project found</div>)}
+                {results === undefined ? (
+                    <div>Loading....</div>
+                ) : (
+                    results.length > 0 ? <Projects projects={results} /> : (<div>No project found</div>)
+                )}
             </section>
         </div>
     )
