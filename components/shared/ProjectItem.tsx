@@ -11,8 +11,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 export default function ProjectItem({ project, index }: { project: any; index: number }) {
     const { description, images, liveUrl, repoUrl, tag, title } = project;
 
-    console.log(tag);
-
     const cardRef = useRef(null);
     const isInView = useInView(cardRef, { once: true });
 

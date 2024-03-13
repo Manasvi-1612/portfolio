@@ -15,8 +15,6 @@ export default function Page() {
 
     const results = data?.result
 
-    console.log(url)
-
     return (
         <div className="container-md">
             <section className="section">
