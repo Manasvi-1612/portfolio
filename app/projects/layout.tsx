@@ -20,7 +20,7 @@ export default function Page() {
 
     const { data, error } = useSWR(fetchUrl, fetcher)
 
-    const results = data?.result
+    const results: any[] = data?.result
 
     const onClick = (catName: string) => setCategory(catName);
 
@@ -29,9 +29,7 @@ export default function Page() {
             <section className="section">
                 <Filter onClick={onClick} />
 
-                {results?.length === 0 ? (<>No Project Found</>) : (
-                    <Projects projects={results} />
-                )}
+                {results.length > 0 ? <Projects projects={results} /> : (<div>No project found</div>)}
             </section>
         </div>
     )
