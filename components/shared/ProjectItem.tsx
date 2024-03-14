@@ -21,8 +21,6 @@ export default function ProjectItem({ project, index }: { project: any; index: n
         loading: "lazy"
     }));
 
-    console.log(galleryImages);
-
     return (
         <section
             ref={cardRef}

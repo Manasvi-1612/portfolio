@@ -11,7 +11,7 @@ import Error from "../error"
 const url = `${process.env.SANITY_ALL_PROJECTS_URL}`
 
 
-export default function Page() {
+export default function Page({ children }: { children: React.ReactNode }) {
 
 
     const [category, setCategory] = useState<string>()
@@ -29,6 +29,9 @@ export default function Page() {
     return (
         <div className="container-md">
             <section className="section">
+
+                <main>{children}</main>
+
                 <Filter onClick={onClick} />
 
                 {results === undefined ? (

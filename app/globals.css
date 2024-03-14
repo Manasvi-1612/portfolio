@@ -86,12 +86,12 @@
 
 
   .h1-bold {
-    @apply font-extrabold text-[60px] leading-[48px] lg:text-[80px] lg:leading-[60px] xl:text-[110px] xl:leading-[74px] tracking-[10px];
+    @apply font-extrabold text-[50px] leading-[40px] lg:text-[70px] lg:leading-[50px] xl:text-[100px] xl:leading-[68px] tracking-[10px];
   }
 
   /* 40 */
   .h2-bold {
-    @apply font-extrabold text-[34px] leading-[40px] lg:text-[40px] lg:leading-[44px] xl:text-[56px] xl:leading-[48px];
+    @apply font-extrabold text-[24px] leading-[34px] lg:text-[30px] lg:leading-[38px] xl:text-[50px] xl:leading-[40px];
   }
 
   .h2-medium {

@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${poppins.variable}`}>
         {/* <Suspense fallback={<Loading />}> */}
         <ThemeContext>
-          <div className='lg:flex lg:flex-row-reverse h-screen justify-between'>
+          <div className='lg:flex lg:flex-row-reverse flex h-screen justify-between w-full'>
             <Header />
             <main className="w-full">{children}</main>
           </div>

@@ -17,7 +17,7 @@ const NavItems = (props: any) => {
 
     return (
 
-        <ul className="flex flex-col gap-4 pr-6 w-40">
+        <ul className="flex flex-col gap-4 pr-6 w-32">
 
             {sideBarLinks.map((link) => {
 
