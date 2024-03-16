@@ -30,7 +30,7 @@ export default function RootLayout({
 
   setTimeout(() => {
     setIsLoading(true)
-  }, 3800)
+  }, 4000)
 
 
 
@@ -39,7 +39,6 @@ export default function RootLayout({
       <body className={`${poppins.variable}`}>
         <AnimatePresence>
           {!isLoading ? < Signature /> :
-
             <ThemeContext>
               <div className='lg:flex lg:flex-row-reverse flex h-screen justify-between w-full  transition-opacity duration-1000'>
               <Header />
