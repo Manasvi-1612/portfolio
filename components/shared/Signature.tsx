@@ -1,6 +1,23 @@
+import { useIsPresent } from "framer-motion"
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+
 export default function Signature() {
+
+	const ref = useRef(null);
+	const isPresent = useIsPresent();
+
+
+	useEffect(() => {
+		if (isPresent) {
+			gsap.to(ref.current, {
+				animation: "fadeOut 1s ease-in-out",
+			});
+		}
+	}, [isPresent]);
+
 	return (
-		<div className="flex items-center justify-center h-screen" style={{transition:"all 0.5s ease-in-out"}}>
+		<div className="flex items-center justify-center h-screen" ref={ref}>
 			<svg version="1.1"
 				id="Layer_1"
 				xmlns="http://www.w3.org/2000/svg"

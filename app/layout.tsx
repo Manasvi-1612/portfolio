@@ -6,6 +6,7 @@ import Header from '@/components/shared/Header'
 import { ThemeContext } from '@/context'
 import Signature from '@/components/shared/Signature'
 import { useState } from 'react'
+import { AnimatePresence, motion } from "framer-motion";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,21 +30,25 @@ export default function RootLayout({
 
   setTimeout(() => {
     setIsLoading(true)
-  }, 4500)
+  }, 3800)
+
+
 
   return (
     <html lang="en">
       <body className={`${poppins.variable}`}>
-        {!isLoading ? < Signature /> :
+        <AnimatePresence>
+          {!isLoading ? < Signature /> :
 
-          <ThemeContext>
-            <div className='lg:flex lg:flex-row-reverse flex h-screen justify-between w-full  transition-opacity duration-1000'>
+            <ThemeContext>
+              <div className='lg:flex lg:flex-row-reverse flex h-screen justify-between w-full  transition-opacity duration-1000'>
               <Header />
               <main className="w-full">{children}</main>
             </div>
-          </ThemeContext>
-        }
-      </body>
-    </html>
+            </ThemeContext>
+          }
+      </AnimatePresence>
+    </body>
+    </html >
   )
 }
