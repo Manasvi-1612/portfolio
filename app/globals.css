@@ -296,4 +296,50 @@
     @apply hidden;
   }
 
+  .st0 {
+    stroke: #111;
+    fill: #111;
+    stroke-dasharray: 1500;
+    opacity: 10;
+    /* animation: animate 7s cubic-bezier(0.17, 0.67, 0.83, 0.67); */
+    animation: animate 7s cubic-bezier(0.17, 0.67, 0.83, 0.67)  normal both;
+  }
+
+
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      fill: none;
+      stroke-dashoffset: 1500;
+    }
+
+    22% {
+      opacity: 10;
+      fill: none;
+      stroke-dashoffset: 1500;
+    }
+
+    70% {
+      opacity: 0.6;
+      fill: rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      opacity: 0;
+      fill: rgba(255, 255, 255, 10);
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .st0 {
+    fill: #111;
+    stroke: #111;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+  }
+
+  .st1 {
+    fill: none;
+  }
+
 }
