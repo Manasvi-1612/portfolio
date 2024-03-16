@@ -30,7 +30,7 @@ export default function RootLayout({
 
   setTimeout(() => {
     setIsLoading(true)
-  }, 4000)
+  }, 5000)
 
 
 
