@@ -29,7 +29,7 @@ export default function RootLayout({
 
   setTimeout(() => {
     setIsLoading(true)
-  }, 4000)
+  }, 4500)
 
   return (
     <html lang="en">
