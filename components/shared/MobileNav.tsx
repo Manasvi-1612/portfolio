@@ -13,7 +13,7 @@ const MobileNav = () => {
     return (
         <nav className="lg:hidden">
             <Sheet>
-                <SheetTrigger className="align-middle" asChild>
+                <SheetTrigger className="align-middle" >
                     <HiMenuAlt3 size={23} />
                 </SheetTrigger>
                 <SheetContent side={'left'} className="flex flex-col gap-5 dark:bg-secondary-dark lg:hidden">
