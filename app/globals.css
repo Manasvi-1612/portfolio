@@ -313,13 +313,13 @@
       stroke-dashoffset: 1500;
     }
 
-    22% {
+    30% {
       opacity: 10;
       fill: none;
       stroke-dashoffset: 1500;
     }
 
-    70% {
+    90% {
       opacity: 0.6;
       fill: rgba(255, 255, 255, 0);
     }
