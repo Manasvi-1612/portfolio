@@ -28,18 +28,16 @@ export async function POST(request: NextRequest) {
             text: message
         }
 
-        transporter.sendMail(mailOptions, function (err, info) {
-            if (err) {
-                console.log(err)
-                NextResponse.json({ error: err.message }, { status: 500 })
-            } else {
-                return NextResponse.json({
-                    message: "Your message has been sent successfully",
-                    success: true,
-                })
-            }
-        })
-
+        await new Promise((resolve, reject) => {
+            transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    console.error(err);
+                    reject(err);
+                } else {
+                    resolve(info);
+                }
+            });
+        });
         return NextResponse.json({
             message: "Your message has been sent successfully",
             success: true,
