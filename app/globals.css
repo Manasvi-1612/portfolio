@@ -117,6 +117,10 @@
     @apply font-bold text-[28px] leading-[36px];
   }
 
+  .h6-semibold {
+    @apply font-semibold text-[20px] leading-[30px];
+  }
+
   /* 24 */
   .p-bold-24 {
     @apply font-bold text-[24px] leading-[36px];
@@ -302,7 +306,7 @@
     stroke-dasharray: 1500;
     opacity: 10;
     /* animation: animate 7s cubic-bezier(0.17, 0.67, 0.83, 0.67); */
-    animation: animate 5s cubic-bezier(0.17, 0.67, 0.83, 0.67)  normal both;
+    animation: animate 5s cubic-bezier(0.17, 0.67, 0.83, 0.67) normal both;
   }
 
 

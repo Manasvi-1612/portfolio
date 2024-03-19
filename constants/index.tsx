@@ -2,6 +2,8 @@ import { IoHome } from "react-icons/io5"
 import { FaUserLarge, FaBriefcase, FaReact } from "react-icons/fa6";
 import { FaPencilAlt, FaEnvelope } from "react-icons/fa";
 import { SiBootstrap, SiDocker, SiGithub, SiHtml5, SiJavascript, SiMongodb, SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {  FaLinkedinIn } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
 
 export const sidebarLinks = [
     {
@@ -123,7 +125,6 @@ export const experience = [
     },
 ]
 
-
 export const education = [
     {
         title: 'Bachelor of Technology',
@@ -141,3 +142,25 @@ export const education = [
         date: '2019 - 2020'
     },
 ]
+
+export const socialLinks = [
+    {
+        title: 'LinkedIn',
+        path: 'https://www.linkedin.com/in/manasvi-j-9689b8224/',
+        icon: <FaLinkedinIn size={24} />
+    },
+    {
+        title: 'Github',
+        path: 'https://github.com/Manasvi-1612',
+        icon: <FiGithub size={23} />
+    }
+]
+
+
+
+export const defaultValues = {
+    email: '',
+    name: '',
+    subject: '',
+    message: '',
+}

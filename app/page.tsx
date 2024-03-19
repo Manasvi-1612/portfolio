@@ -62,74 +62,74 @@ export default function Page() {
 
   return (
     <LazyMotion features={domAnimation}>
-    <m.div
-      initial={initial}
-      animate={animate}
-      exit={exit}
-      transition={transition}
-    >
-      <section className='grid grid-cols-1 lg:grid-cols-2 place-items-center text-title-light dark:text-white' ref={introRef}>
-        <div className="bgBlock hidden lg:flex"></div>
-        <div className="z-10 py-10 lg:pl-10 ">
-          <Image src='/assets/wallpaper.jpg' alt='profile' width={1000} height={1000} className="object-cover w-[250px] h-[250px] rounded-full border-4 dark:border-secondary-dark border-secondary-light lg:border-0 lg:w-[75%] lg:h-[600px] lg:rounded-3xl max-lg:mt-10" />
-        </div>
+      <m.div
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={transition}
+      >
+        <section className='grid grid-cols-1 lg:grid-cols-2 place-items-center text-title-light dark:text-white' ref={introRef}>
+          <div className="bgBlock hidden lg:flex"></div>
+          <div className="z-10 py-10 lg:pl-10 ">
+            <Image src='/assets/wallpaper.jpg' alt='profile' width={1000} height={1000} className="object-cover w-[250px] h-[250px] rounded-full border-4 dark:border-secondary-dark border-secondary-light lg:border-0 lg:w-[75%] lg:h-[600px] lg:rounded-3xl max-lg:mt-10" />
+          </div>
 
-        <div className="lg:text-start mx-[10%] lg:mx-0">
-          <h1
-            tabIndex={0}
-            ref={ref}
-            className="text-3xl md:text-5xl xl:text-6xl font-bold"
-            style={{
-              transform: isInView ? "none" : "translateX(-200px)",
-              opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-            }}
-          >
-            <p>
-              Hi, I&apos;m <mark>Manasvi</mark> a <mark>passionate</mark> software developer.
-            </p>
-          </h1>
-
-          <div className="my-8 relative flex flex-col overflow-hidden">
-            <p
+          <div className="lg:text-start mx-[10%] lg:mx-0">
+            <h1
+              tabIndex={0}
               ref={ref}
-              className="text-[17px] md:text-2xl transform-none opacity-100"
+              className="text-3xl md:text-5xl xl:text-6xl font-bold"
               style={{
                 transform: isInView ? "none" : "translateX(-200px)",
                 opacity: isInView ? 1 : 0,
                 transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
               }}
             >
-              I
-              <span
-                className="absolute flex flex-col transition-all duration-500 ease-in-expo"
+              <p>
+                Hi, I&apos;m <mark>Manasvi</mark> a <mark>passionate</mark> software developer.
+              </p>
+            </h1>
+
+            <div className="my-8 relative flex flex-col overflow-hidden">
+              <p
+                ref={ref}
+                className="text-[17px] md:text-2xl transform-none opacity-100"
                 style={{
-                  top:
-                    count === 0
-                      ? "0"
-                      : count === 1
-                        ? "-100%"
-                        : count === 2
-                          ? "-200%"
-                          : count === 3
-                            ? "-300%"
-                            : "0",
-                  left: "13px"
+                  transform: isInView ? "none" : "translateX(-200px)",
+                  opacity: isInView ? 1 : 0,
+                  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}
               >
-                {text.map((element) => (
-                  <TextElement key={element} element={element} />
-                ))}
-              </span>
-            </p>
+                I
+                <span
+                  className="absolute flex flex-col transition-all duration-500 ease-in-expo"
+                  style={{
+                    top:
+                      count === 0
+                        ? "0"
+                        : count === 1
+                          ? "-100%"
+                          : count === 2
+                            ? "-200%"
+                            : count === 3
+                              ? "-300%"
+                              : "0",
+                    left: "13px"
+                  }}
+                >
+                  {text.map((element) => (
+                    <TextElement key={element} element={element} />
+                  ))}
+                </span>
+              </p>
+            </div>
+            <Link href="/about">
+              <ButtonComponent title="More About me" name="About" />
+            </Link>
           </div>
-          <Link href="/about">
-            <ButtonComponent title="More About me" name="Button" />
-          </Link>
-        </div>
-      </section>
+        </section>
 
-    </m.div>
+      </m.div>
     </LazyMotion >
   )
 }
