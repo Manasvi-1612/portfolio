@@ -1,7 +1,7 @@
 
 import { FaArrowRight } from "react-icons/fa";
 import { Button } from "../ui/button";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaTelegramPlane } from "react-icons/fa";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -13,12 +13,16 @@ const ButtonComponent = ({ title, name }: { title: string, name: string }) => {
 
   const icon = [
     {
-      name: "Button",
+      name: "About",
       icon: <FaArrowRight size={19} />,
     },
     {
       name: "Download",
       icon: <FaDownload size={19} />,
+    },
+    {
+      name: "Message",
+      icon: <FaTelegramPlane size={19} />
     }
   ]
 

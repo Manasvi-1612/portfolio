@@ -7,6 +7,7 @@ import { ThemeContext } from '@/context'
 import Signature from '@/components/shared/Signature'
 import { useState } from 'react'
 import { AnimatePresence, motion } from "framer-motion";
+import { Toaster } from 'react-hot-toast'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -32,8 +33,6 @@ export default function RootLayout({
     setIsLoading(true)
   }, 5000)
 
-
-
   return (
     <html lang="en">
       <body className={`${poppins.variable}`}>
@@ -41,13 +40,16 @@ export default function RootLayout({
           {!isLoading ? < Signature /> :
             <ThemeContext>
               <div className='lg:flex lg:flex-row-reverse flex h-screen justify-between w-full  transition-opacity duration-1000'>
-              <Header />
-              <main className="w-full">{children}</main>
-            </div>
+                <Header />
+                <main className="w-full">
+                  <Toaster position='top-center' />
+                  {children}
+                </main>
+              </div>
             </ThemeContext>
           }
-      </AnimatePresence>
-    </body>
+        </AnimatePresence>
+      </body>
     </html >
   )
 }
