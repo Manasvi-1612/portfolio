@@ -2,7 +2,6 @@ import ContactForm from '@/components/shared/ContactForm'
 import PrimeTitle from '@/components/shared/PrimeTitle'
 import Link from 'next/link';
 import { IoIosMail, IoMdCall } from "react-icons/io"
-import { FaLinkedin } from "react-icons/fa6"
 import { socialLinks } from '@/constants';
 
 const page = () => {

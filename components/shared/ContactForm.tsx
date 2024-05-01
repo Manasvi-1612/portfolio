@@ -18,8 +18,9 @@ import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Textarea } from "../ui/textarea"
 import ButtonComponent from "./ButtonComponent"
-import axios from "axios"
 import toast from "react-hot-toast"
+import emailjs from '@emailjs/browser'
+import { useRef } from "react"
 
 
 export default function ContactForm() {
@@ -31,21 +32,33 @@ export default function ContactForm() {
 
     async function onSubmit(values: z.infer<typeof validationSchema>) {
         try {
-            const response = await axios.post("/api/mail", { values });
+            const emailServiceId = process.env.EMAIL_SERVICE_ID!;
+            const emailTemplateId = process.env.EMAIL_TEMPLATE_ID!;
+            const emailPublicId = process.env.EMAIL_PUBLIC_ID!;
 
-            if (response) {
-                if (response.data.success) {
-                    toast.success(response.data.message)
-                    form.reset()
-                }
+            const templateParams: any = {
+                from_email: values.email,
+                from_name: values.name,
+                message: values.message,
+                subject: values.subject,
             }
+
+            const response = await emailjs.send(emailServiceId, emailTemplateId, templateParams, {
+                publicKey: emailPublicId
+            })
+
+            if (response.status === 200) {
+                toast.success("Message sent successfully")
+                form.reset()
+            }
+
         } catch (error: any) {
-            toast.error(error.message)
+            toast.error(error.message || "Failed to send message")
         }
     }
 
     return (
-        <Form {...form}>
+        <Form {...form} >
             <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5 text-start">
                 <div className="flex flex-col gap-5 md:flex-row">
                     <FormField
