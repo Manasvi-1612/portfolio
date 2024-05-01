@@ -36,8 +36,6 @@ export default function ContactForm() {
             const emailTemplateId = process.env.EMAIL_TEMPLATE_ID!;
             const emailPublicId = process.env.EMAIL_PUBLIC_ID!;
 
-            console.log("emailServiceId", emailServiceId, "emailTemplateId", emailTemplateId, "emailPublicId", emailPublicId)
-
             const templateParams: any = {
                 from_email: values.email,
                 from_name: values.name,
@@ -48,8 +46,6 @@ export default function ContactForm() {
             const response = await emailjs.send(emailServiceId, emailTemplateId, templateParams, {
                 publicKey: emailPublicId
             })
-
-            console.log("response", response)
 
             if (response.status === 200) {
                 toast.success("Message sent successfully")
