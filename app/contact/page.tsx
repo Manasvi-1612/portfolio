@@ -31,7 +31,7 @@ const page = () => {
                 <IoMdCall size={65} />
                 <div className='flex flex-col text-left'>
                   <h6 className='h6-semibold uppercase'>call me</h6>
-                  <p className='p-medium-16'>+91 8290679916</p>
+                  <p className='p-medium-16'>+91 898XXXXXXX</p>
                 </div>
               </div>
 
