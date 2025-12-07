@@ -40,7 +40,7 @@ const About = () => {
                         </div>
 
                         {/* <Link  href={'public/images/table_data.pdf'}  target="_blank"  rel="noopener noreferrer" locale={false} download>Download Here</Link> */}
-                        <Link href='/ManasviJoshiResume.pdf' target="_blank" rel="noopener noreferrer" locale={false}  >
+                        <Link href='/ManasviResume.pdf' target="_blank" rel="noopener noreferrer" locale={false}  >
                             <ButtonComponent title='Download cv' name='Download' />
                         </Link>
                     </div>
